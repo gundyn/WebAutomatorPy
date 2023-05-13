@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
 class WebDriver:
     """A utility class for managing a Selenium WebDriver."""
@@ -13,7 +14,9 @@ class WebDriver:
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        self.driver = webdriver.Chrome(executable_path=self.driver_path, options=options)
+        
+        service = Service(self.driver_path)
+        self.driver = webdriver.Chrome(service=service, options=options)
         self.driver.maximize_window()
         
     def teardown(self):
