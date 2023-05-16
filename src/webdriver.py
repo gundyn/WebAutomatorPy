@@ -1,3 +1,5 @@
+import os
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -23,3 +25,10 @@ class WebDriver:
         """Close the browser and quit the WebDriver."""
         if self.driver:
             self.driver.quit()
+
+    def save_screenshot(self, filename):
+        """Save a screenshot of the current browser window to the specified file."""
+        screenshot_dir = "screenshots"
+        os.makedirs(screenshot_dir, exist_ok=True)
+        screenshot_path = os.path.join(screenshot_dir, filename)
+        self.driver.save_screenshot(screenshot_path)

@@ -3,7 +3,7 @@ import logging
 class LandingPage:
     """Interactions with the landing page."""
 
-    URL = 'https://ultimateqa.com/fake-landing-page'
+    URL = 'https://ultimateqa.com/fake-landing-page/'
 
     def __init__(self, driver):
         """Initialize with the WebDriver instance."""

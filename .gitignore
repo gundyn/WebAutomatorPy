@@ -161,3 +161,6 @@ cython_debug/
 
 # Drivers
 drivers/chromedriver
+
+# Screenshots
+screenshots/

@@ -1,5 +1,5 @@
 import pytest
-import logging
+from utils.logger import logger
 
 from src.webdriver import WebDriver
 from src.landing_page import LandingPage
@@ -23,6 +23,15 @@ class TestLandingPage:
 
     def test_page_loads(self):
         """Test the landing page load."""
-        logging.info('Starting test_page_loads.')
+        logger.info('Starting test_page_loads.')
+        print('Log message:', 'Starting test_page_loads.')  
         self.landing_page.load()
         assert self.driver.driver.current_url == LandingPage.URL
+
+        # Capture a screenshot on successful load or failure
+        if self.driver.driver.current_url == LandingPage.URL:
+            logger.info('Page loaded successfully.')
+            self.driver.save_screenshot('successful_load.png')
+        else:
+            logger.error('Page did not load successfully.')
+            self.driver.save_screenshot('failure_load.png')
