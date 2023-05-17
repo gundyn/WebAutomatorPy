@@ -18,21 +18,23 @@ The project has been successfully tested, and all test cases pass, ensuring that
 
 The repository has the following directory structure:
 
-- drivers
-  - chromedriver
-    - LICENSE.chromedriver
-- logs
-  - test.log
-- screenshots
-  - successful_load.png
-- src
-  - webdriver.py
-  - landing_page.py
-- tests
-  - test_landing_page.py
-- utils
-  - logger.py
-- README.md
+```
+├── drivers
+│ └── chromedriver
+│ └── LICENSE.chromedriver
+├── logs
+│ └── test.log
+├── screenshots
+│ └── successful_load.png
+├── src
+│ ├── webdriver.py
+│ ├── landing_page.py
+├── tests
+│ └── test_landing_page.py
+├── utils
+│ └── logger.py
+└── README.md
+```
 
 - The `drivers` directory contains the ChromeDriver executable file (`chromedriver`) and its license file (`LICENSE.chromedriver`).
 - The `logs` directory contains the log file (`test.log`).
