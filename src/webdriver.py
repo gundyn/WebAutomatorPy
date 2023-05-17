@@ -1,7 +1,11 @@
 import os
 
+from utils.logger import logger
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class WebDriver:
     """A utility class for managing a Selenium WebDriver."""
@@ -31,4 +35,16 @@ class WebDriver:
         screenshot_dir = "screenshots"
         os.makedirs(screenshot_dir, exist_ok=True)
         screenshot_path = os.path.join(screenshot_dir, filename)
+
+        # Delete the existing file if it exists
+        if os.path.exists(screenshot_path):
+            os.remove(screenshot_path)
+
         self.driver.save_screenshot(screenshot_path)
+
+
+    def wait(self, locator):
+        """Wait for an element with the specified locator."""
+        logger.info('Waiting for element with locator: %s', locator)
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located(locator))
