@@ -66,6 +66,4 @@ For more information and documentation on Selenium WebDriver and Python, refer t
 
 ## About
 
-This project is part of a class taken at Tilburg University, where students learn about web automation and testing using Python and Selenium.
-
-Contributors: [Your Name], [Contributor 1], [Contributor 2], ...
+This project is a personal undertaking by Nathan T. Gundy. It aims to showcase web automation and testing skills using Python and Selenium.
